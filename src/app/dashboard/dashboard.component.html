@@ -1,0 +1,49 @@
+<div>
+    <mat-toolbar style="margin:10px;">Transactions</mat-toolbar>
+</div>
+
+
+<table mat-table
+       [dataSource]="dataSource" multiTemplateDataRows
+       class="mat-elevation-z8">
+  <ng-container matColumnDef="Block">
+    <th mat-header-cell *matHeaderCellDef> Block </th>
+    <td mat-cell *matCellDef="let element"> <span class="id">{{element._id}}</span> </td>
+  </ng-container>
+  <ng-container matColumnDef="Timestamp">
+    <th mat-header-cell *matHeaderCellDef> Timestamp </th>
+    <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-diagram">
+          <mat-icon class="tick" [ngStyle]="{'color':'green'}">done_outline</mat-icon>
+        </div>
+        <div class="example-element-description">
+          <div><span style="color: green;">Block ID:</span><span style="color:orange">{{element.description._id}}</span></div>
+          <div><span style="color: green;">Transaction Hash:</span><span style="color:orange">{{element.description.transaction_hash}}</span></div>
+          <div><span style="color: green;">Parent Hash:</span><span style="color:orange">{{element.description.parent_hash}}</span></div>
+          <div><span style="color: green;">Sender:</span><span style="color:orange">{{element.description.sender}}</span></div>
+          <div><span style="color: green;">Receiver:</span><span style="color:orange">{{element.description.receiver}}</span></div>
+          <div><span style="color: green;">Timestamp:</span><span style="color:orange">{{element.description.timestamp}}</span></div>
+          <div><span style="color: green;">Random number:</span><span style="color:orange">{{element.description.random_num}}</span></div>
+          <div><span style="color: green;">Transaction:</span><span style="color:orange">{{element.description.message}}</span></div>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
