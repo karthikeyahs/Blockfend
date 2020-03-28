@@ -3,15 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyDevicesComponent } from './my-devices/my-devices.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 
 const routes: Routes = [
   {
-    path:'home', component:HomeComponent, 
-    data:{
-      icon:'home',
-      title:'Home'
-    }
+    path:'', component:HomeComponent
+  },
+  {
+    path:'home', component:MainNavComponent
   },
   {
     path:'dashboard', component:DashboardComponent,
