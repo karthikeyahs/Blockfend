@@ -11,21 +11,12 @@ const routes: Routes = [
     path:'', component:HomeComponent
   },
   {
-    path:'home', component:MainNavComponent
-  },
-  {
-    path:'dashboard', component:DashboardComponent,
-    data:{
-      icon:'dashboard',
-      title:'Dashboard'
-    }
-  },
-  {
-    path:'myDevices', component:MyDevicesComponent,
-    data:{
-      icon:'important_devices',
-      title:'My Devices'
-    }
+    path:'home', component:MainNavComponent,
+    children:[
+      {path:'', redirectTo:'dashboard', pathMatch:'full'},
+      {path:'dashboard', component:DashboardComponent},
+      {path:'myDevices', component:MyDevicesComponent}
+    ]
   }
 ];
 

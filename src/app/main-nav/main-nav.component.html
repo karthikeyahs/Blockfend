@@ -3,13 +3,13 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar class="logo"><img src="logo4.jpeg" height="120px" width="120px"></mat-toolbar>
+    <mat-toolbar class="logo"><img src="assets/images/logo4.png" height="120px" width="120px"></mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list class="menus">
-      <button class="menu-item" routerLink="dashboard" mat-flat-button>
+      <button class="menu-item" routerLink="dashboard" routerLinkActive="active-link" mat-flat-button>
         <mat-list-item><mat-icon>dashboard</mat-icon>Dashboard
       </mat-list-item></button>
-      <button class="menu-item" routerLink="myDevices" mat-flat-button>
+      <button class="menu-item" routerLink="myDevices" routerLinkActive="active-link" mat-flat-button>
         <mat-list-item><mat-icon>important_devices</mat-icon>My Devices
       </mat-list-item></button>
       <button class="menu-item" mat-flat-button>
@@ -30,7 +30,7 @@
       </button>
       <mat-icon>dashboard</mat-icon><span>Dashboard</span>
     <span class="spacer"></span>
-    <button mat-button [matMenuTriggerFor]="menu"><img src="user.png" height="30px" width="30px"></button>
+    <button mat-button [matMenuTriggerFor]="menu"><img src="assets/images/user.png" height="30px" width="30px"></button>
       <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
@@ -42,7 +42,7 @@
       </button>
       </mat-menu>
     </mat-toolbar>
-    <ng-content></ng-content>
+      <router-outlet></router-outlet>
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

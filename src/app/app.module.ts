@@ -18,6 +18,7 @@ import { MyDevicesComponent } from './my-devices/my-devices.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MainNavComponent,
     HomeComponent,
     MyDevicesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
