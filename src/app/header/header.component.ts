@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
+import {NotificationService} from '../shared/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginDialog: MatDialog,
+              public notificationService: NotificationService) { }
 
   ngOnInit(): void {
+  }
+
+  openLoginDialog(){
+    const loginDialogConfig = new MatDialogConfig();
+    loginDialogConfig.autoFocus = true;
+    loginDialogConfig.width = "60%";
+    this.loginDialog.open(LoginComponent,loginDialogConfig);
   }
 
 }

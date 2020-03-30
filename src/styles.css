@@ -2460,7 +2460,7 @@ a:hover, #header.nav-solid nav a:hover {
 /* Banner Background and Text Colors */
 
 #banner {
-    background: url("assets/images/banner-images/blockchain1.jpg") no-repeat center top;
+    background: url("assets/images/banner-images/blockchain6.jpg") no-repeat center top;
     background-size:cover;
 }
 
@@ -2662,4 +2662,43 @@ h6 {
 
 #landing-footer i {
     color:#999;
+}
+
+form.normal-form{
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+.controlles-container{
+    width:100%;
+    padding:5%;
+}
+
+.controlles-container > * {
+    width:100%;
+}
+
+.add-bottom-padding{
+    padding-bottom: 10px;
+}
+
+mat-radio-group mat-radio-button{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.button-row button{
+    margin: 5px;
+}
+
+snack-bar-container.success{
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+snack-bar-container.notification simple-snack-bar{
+    font-size: 18px;
+    font-weight: bold;
 }

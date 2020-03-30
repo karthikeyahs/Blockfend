@@ -1,0 +1,60 @@
+<div class="container" style="margin-left: 40px;">
+    <h2 class="section-title">Sign Up</h2>
+</div>
+
+<form [formGroup]="userService.form" class="normal-form">
+    <mat-grid-list cols="2" rowHeight="350px">
+        <mat-grid-tile>
+            <div class="controlles-container" style="margin-top: 40px;">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field>
+                    <input formControlName="fullname" matInput placeholder="Enter your Full name*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="username" matInput placeholder="Enter your username*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="createPassword" type="password" matInput placeholder="Create password*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="reenterPassword" type="password" matInput placeholder="Re-enter password*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controlles-container" style="margin-top: 40px;">
+                <div class="add-bottom-padding">
+                    <mat-form-field>
+                        <input formControlName="email" matInput placeholder="Enter your Email*">
+                        <mat-error *ngIf="userService.form.controls['email'].errors?.required">This field is mandatory.</mat-error>
+                        <mat-error *ngIf="userService.form.controls['email'].errors?.email">Enter a valid email.</mat-error>
+                    </mat-form-field>
+                    <h6>Gender*</h6>
+                    <mat-radio-group formControlName="gender" aria-placeholder="Gender*">
+                        <mat-radio-button value="1">Male</mat-radio-button>
+                        <mat-radio-button value="2">Female</mat-radio-button>
+                        <mat-radio-button value="2">Choose not to disclose</mat-radio-button>
+                    </mat-radio-group>
+                    <br>
+                    <mat-form-field style="margin-top:20px;">
+                        <mat-select formControlName="country" placeholder="Select Country*">
+                            <ng-container *ngFor="let country of countries">
+                                <mat-option value="{{country.viewValue}}">{{country.viewValue}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                        <mat-error>This field is mandatory.</mat-error>
+                    </mat-form-field>  
+                    <div class="button-row">
+                        <button mat-raised-button color="primary" type="submit" (click)="onSignupSubmit()" [disabled]="userService.form.invalid">Register</button>
+                        <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

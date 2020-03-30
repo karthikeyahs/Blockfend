@@ -19,7 +19,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { HeaderComponent } from './header/header.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { UserService } from './shared/user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatInputModule} from '@angular/material/input'; 
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatRadioModule} from '@angular/material/radio'; 
+import {MatSelectModule} from '@angular/material/select';
+import { LoginComponent } from './login/login.component'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +38,9 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     MyDevicesComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +55,18 @@ import { HeaderComponent } from './header/header.component';
     MatMenuModule,
     HttpClientModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+  bootstrap: [AppComponent],
+  entryComponents: [LoginComponent]
 })
 export class AppModule { }
