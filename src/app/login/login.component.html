@@ -2,9 +2,8 @@
     <h2 class="section-title">Sign In</h2>
 </div>
 
-<form [formGroup]="loginService.loginForm" class="normal-form">
+<form [formGroup]="loginService.loginForm" class="normal-form" (ngSubmit)="login()">
     <div class="controlles-container" style="margin-top: 40px;">
-        <input type="hidden" formControlName="$key">
         <mat-form-field>
             <input formControlName="username" matInput placeholder="Enter your username*">
             <mat-error>This field is mandatory.</mat-error>
@@ -15,6 +14,6 @@
         </mat-form-field>
     </div>
     <div class="button-row">
-        <button mat-raised-button color="primary" type="submit" (click)="onLoginSubmit()" routerLink='/home' [disabled]="loginService.loginForm.invalid">Sign In</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginService.loginForm.invalid">Sign In</button>
     </div>
 </form>

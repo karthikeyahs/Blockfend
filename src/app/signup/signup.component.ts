@@ -30,11 +30,16 @@ export class SignupComponent implements OnInit {
   }
 
   onSignupSubmit(){
-    if(this.userService.form.valid){
-      this.userService.form.reset();
-      this.userService.initializeFormGroup();
-      this.notificationService.openSnackBar(":: Sign Up Successful",null);
-    }
+    
   }
   
+  submitSignupForm(){
+    if(this.userService.form.valid){
+      this.userService.submitForm();
+      this.userService.form.reset();
+      this.userService.initializeFormGroup();
+      this.notificationService.openSnackBar(":: Sign Up Successful",null,'ok');
+    }
+  }
+
 }

@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getBlockData(){
-    this.dataService.getData().subscribe((res) => {
+    this.dataService.getRequests('/blocks').subscribe((res) => {
         console.log(res);  
       // let data = JSON.parse(res);
         this.dataSource = res as MatTableDataSource<BlockElement>;

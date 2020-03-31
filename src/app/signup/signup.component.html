@@ -2,11 +2,10 @@
     <h2 class="section-title">Sign Up</h2>
 </div>
 
-<form [formGroup]="userService.form" class="normal-form">
-    <mat-grid-list cols="2" rowHeight="350px">
+<form [formGroup]="userService.form" class="normal-form" (ngSubmit)="submitSignupForm()">
+    <mat-grid-list cols="2" rowHeight="400px">
         <mat-grid-tile>
             <div class="controlles-container" style="margin-top: 40px;">
-                <input type="hidden" formControlName="$key">
                 <mat-form-field>
                     <input formControlName="fullname" matInput placeholder="Enter your Full name*">
                     <mat-error>This field is mandatory.</mat-error>
@@ -36,9 +35,9 @@
                     </mat-form-field>
                     <h6>Gender*</h6>
                     <mat-radio-group formControlName="gender" aria-placeholder="Gender*">
-                        <mat-radio-button value="1">Male</mat-radio-button>
-                        <mat-radio-button value="2">Female</mat-radio-button>
-                        <mat-radio-button value="2">Choose not to disclose</mat-radio-button>
+                        <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button>
+                        <mat-radio-button value="Choose not to disclose">Choose not to disclose</mat-radio-button>
                     </mat-radio-group>
                     <br>
                     <mat-form-field style="margin-top:20px;">
@@ -50,7 +49,7 @@
                         <mat-error>This field is mandatory.</mat-error>
                     </mat-form-field>  
                     <div class="button-row">
-                        <button mat-raised-button color="primary" type="submit" (click)="onSignupSubmit()" [disabled]="userService.form.invalid">Register</button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="userService.form.invalid">Register</button>
                         <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
                     </div>
                 </div>

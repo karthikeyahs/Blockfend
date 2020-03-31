@@ -2698,6 +2698,11 @@ snack-bar-container.success{
     color: #fff;
 }
 
+snack-bar-container.warn{
+    background-color: red;
+    color: white;
+}
+
 snack-bar-container.notification simple-snack-bar{
     font-size: 18px;
     font-weight: bold;

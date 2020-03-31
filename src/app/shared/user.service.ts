@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {DataService} from '../shared/data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
+
+  isValid;
 
   form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
     fullname: new FormControl('', Validators.required),
     username: new FormControl('', Validators.required),
     createPassword: new FormControl('', Validators.required),
@@ -20,29 +22,31 @@ export class UserService {
   });
 
   loginForm: FormGroup = new FormGroup({
-    $key: new FormControl(null),
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required)
   });
 
   initializeFormGroup(){
     this.form.setValue({
-      $key:null,
       fullname:'',
       username:'',
       createPassword:'',
       reenterPassword:'',
       email:'',
-      gender:'1',
+      gender:'',
       country:'0'
     });
   }
   
   initializeLoginFormGroup(){
     this.loginForm.setValue({
-      $key:null,
       username:'',
       password:''
     });
+  }
+
+  submitForm(){
+    console.log(this.form.value);
+    this.dataService.signup(this.form.value);
   }
 }

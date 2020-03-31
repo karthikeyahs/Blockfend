@@ -8,9 +8,16 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  blocksURL = '/blocks';
+  signupURL = '/signup';
+  isValid = '';
+  getRequests(blocksURL) {
+    return this.http.get(blocksURL);
+  }
 
-  getData() {
-    return this.http.get(this.blocksURL);
+  signup(formData){
+    this.http.post(this.signupURL,formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    )
   }
 }
