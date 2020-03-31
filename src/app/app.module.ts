@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './login/login.component'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
