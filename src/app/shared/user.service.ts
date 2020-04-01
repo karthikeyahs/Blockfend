@@ -47,6 +47,6 @@ export class UserService {
 
   submitForm(){
     console.log(this.form.value);
-    this.dataService.signup(this.form.value);
+    this.dataService.postData('/signup',this.form.value);
   }
 }

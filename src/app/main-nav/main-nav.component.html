@@ -3,23 +3,26 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar class="logo"><img src="assets/images/logo4.png" height="120px" width="120px"></mat-toolbar>
+    <mat-toolbar class="logo"><img src="assets/images/logo4.png" height="170px" width="170px"></mat-toolbar>
     <mat-divider></mat-divider>
     <mat-nav-list class="menus">
       <button class="menu-item" routerLink="dashboard" routerLinkActive="active-link" mat-flat-button>
-        <mat-list-item><mat-icon>dashboard</mat-icon>Dashboard
+        <mat-list-item><mat-icon>dashboard</mat-icon><span class="section-title" style="margin-left:7px;font-weight: lighter;font-size: 18px;">Dashboard</span>
       </mat-list-item></button>
+      <mat-divider style="margin-left: 17px;margin-right: 10px;"></mat-divider>
       <button class="menu-item" routerLink="myDevices" routerLinkActive="active-link" mat-flat-button>
-        <mat-list-item><mat-icon>important_devices</mat-icon>My Devices
+        <mat-list-item><mat-icon>important_devices</mat-icon><span class="section-title" style="margin-left:7px;font-weight: lighter;font-size: 18px;">My Devices</span>
       </mat-list-item></button>
+      <mat-divider style="margin-left: 17px;margin-right: 10px;"></mat-divider>
       <button class="menu-item" mat-flat-button>
-        <mat-list-item><mat-icon>help</mat-icon>Help
+        <mat-list-item><mat-icon>help</mat-icon><span class="section-title" style="margin-left:7px;font-weight: lighter;font-size: 18px;">Help</span>
       </mat-list-item></button>
+
     </mat-nav-list>
   </mat-sidenav>
   
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="head">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -28,7 +31,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+      <h1 class="section-title" style="margin:8px 0px;font-weight: bold;font-size: 30px;">BLOCSEC</h1>
     <span class="spacer"></span>
     <button mat-button [matMenuTriggerFor]="menu"><img src="assets/images/user.png" height="30px" width="30px"></button>
       <mat-menu #menu="matMenu">

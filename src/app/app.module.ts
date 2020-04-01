@@ -30,7 +30,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { LoginComponent } from './login/login.component'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './footer/footer.component'; 
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {MatCardModule} from '@angular/material/card';
     DashboardComponent,
     HeaderComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

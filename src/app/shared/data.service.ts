@@ -8,14 +8,12 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  signupURL = '/signup';
-  isValid = '';
   getRequests(blocksURL) {
     return this.http.get(blocksURL);
   }
 
-  signup(formData){
-    this.http.post(this.signupURL,formData).subscribe(
+  postData(URL:string,formData){
+    this.http.post(URL,formData).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     )

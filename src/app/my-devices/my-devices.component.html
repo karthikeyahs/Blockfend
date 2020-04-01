@@ -1,20 +1,47 @@
+<div style="background-color: white; padding-left: 30px;padding-top: 30px;">
 <div class="container">
-  <div class="section-title">My Devices</div>
-    <mat-card class="example-card">
-        <mat-card-header>
-            <mat-card-title>Door</mat-card-title>
-            <mat-card-subtitle>For Open your door</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="static/assets/door.jpg">
-        <mat-card-content>
-            <p>
-            By clicking on "Open my door", a transaction with "Open my door" as the message is created. The miners
-            then participate in Proof of Elapsed Time (PoET). The winner of PoET will mine the block. Your door 
-            will open in few seconds.
-            </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button color="primary" mat-raised-button>Open my door</button>
-        </mat-card-actions>
-    </mat-card>
+  <div class="section-title">My Devices</div></div>
+  <mat-divider style="margin-right: 30px;margin-top:15px;"></mat-divider>
+    <mat-grid-list [cols]="breakpoint" rowHeight="600px" (window:resize)="onResize($event)">
+        <mat-grid-tile>
+          <mat-card class="example-card" style="width:300px;">
+            <mat-card-header>
+                <mat-card-title>Door</mat-card-title>
+                <mat-card-subtitle>To Open your door</mat-card-subtitle>
+            </mat-card-header> 
+            <img mat-card-image src="assets/images/door.jpg">
+            <mat-card-content>
+                <p>
+                By clicking on "Open my door", a transaction with "Open my door" as the message is created. The miners
+                then participate in Proof of Elapsed Time (PoET). The winner of PoET will mine the block. Your door 
+                will open in few seconds.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button color="primary" mat-raised-button (click)="generateTransaction('door','Open my door')">Open my door</button>
+            </mat-card-actions>
+          </mat-card>
+
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card class="example-card" style="width:300px;">
+              <mat-card-header>
+                  <mat-card-title>Light</mat-card-title>
+                  <mat-card-subtitle>To On your light</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="assets/images/light.jpg">
+              <mat-card-content>
+                  <p>
+                  By clicking on "On my light", a transaction with "On my light" as the message is created. The miners
+                  then participate in Proof of Elapsed Time (PoET). The winner of PoET will mine the block. Your light 
+                  will on in few seconds.
+                  </p>
+              </mat-card-content>
+              <mat-card-actions>
+                  <button color="primary" mat-raised-button (click)="generateTransaction('light','On my light')">On my light</button>
+              </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
+    <app-footer></app-footer>

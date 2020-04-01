@@ -3,12 +3,15 @@
 }
 
 .sidenav {
-  width: 160px;
-  padding: 10px 0px;
+  width: 170px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
+  padding: 0px;
+  height: 170px;
 }
 
 .mat-toolbar.mat-primary {
@@ -21,18 +24,18 @@
   flex: 1 1 auto;
 }
 
-.logo{
-  width:120px;
-  height: 120px;
-  margin: 10px;
-}
 
 .menu-item{
   width:100%;
-  padding: 5px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 .menus{
   margin: 10px 0px 0px 0px;
   width: 100%;
+}
+
+.head{
+  background-color: rgb(196, 166, 33);
+  height: 100px;
 }
