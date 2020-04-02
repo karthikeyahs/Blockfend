@@ -1,0 +1,28 @@
+<div style="background-color: white; padding-left: 30px;padding-top: 30px;">
+    <div class="container">
+      <div class="section-title">Settings</div></div>
+      <mat-divider style="margin-right: 30px;margin-top:15px;"></mat-divider>
+        <mat-grid-list [cols]="breakpoint" rowHeight="600px" (window:resize)="onResize($event)">
+            <mat-grid-tile>
+              <mat-card class="example-card" style="width:300px;">
+                <mat-card-header>
+                    <mat-card-title>Disconnect from network</mat-card-title>
+                    <mat-card-subtitle>To disconnect from network</mat-card-subtitle>
+                </mat-card-header> 
+                <img mat-card-image src="assets/images/network_dc.png" width="300px" height="197px">
+                <mat-card-content>
+                    <p>
+                    By clicking on disconnect, your PC gets disconnected from the blockchain network. 
+                    You will not be able generate any transaction. Also,the correct view of blockchain will
+                    not be visible.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button color="warn" mat-raised-button (click)="disconnect()"><span style="color: white;">Disconnect from network</span></button>
+                </mat-card-actions>
+              </mat-card>
+                
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    <app-footer></app-footer>

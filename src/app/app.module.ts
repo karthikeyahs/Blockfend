@@ -31,7 +31,8 @@ import { LoginComponent } from './login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 import {MatCardModule} from '@angular/material/card';
-import { FooterComponent } from './footer/footer.component'; 
+import { FooterComponent } from './footer/footer.component';
+import { SettingsComponent } from './settings/settings.component'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

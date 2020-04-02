@@ -30,7 +30,9 @@ export class MainNavComponent implements OnInit{
   }
 
   onLogout(){
-    this.dataService.getRequests('/logout');
+    this.dataService.getRequests('/logout').subscribe((res) => {
+      console.log(res);  
+  });
     this.notificationService.openSnackBar(':: Logout Successful',null,'ok')
     this.route.navigate(['/']);
   }

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyDevicesComponent } from './my-devices/my-devices.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     children:[
       {path:'', redirectTo:'dashboard', pathMatch:'full'},
       {path:'dashboard', component:DashboardComponent},
-      {path:'myDevices', component:MyDevicesComponent}
+      {path:'myDevices', component:MyDevicesComponent},
+      {path:'settings', component:SettingsComponent}
     ]
   }
 ];
