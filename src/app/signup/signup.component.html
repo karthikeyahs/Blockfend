@@ -19,8 +19,10 @@
                     <mat-error>This field is mandatory.</mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <input formControlName="reenterPassword" type="password" matInput placeholder="Re-enter password*">
-                    <mat-error>This field is mandatory.</mat-error>
+                    <input formControlName="reenterPassword" type="password" [errorStateMatcher]="userService.matcher" matInput placeholder="Re-enter password*">
+                    <mat-error *ngIf="userService.form.hasError('notSame')">
+                        Passwords do not match
+                    </mat-error> 
                 </mat-form-field>
                 
             </div>
