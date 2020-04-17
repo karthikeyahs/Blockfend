@@ -57,7 +57,7 @@ export class UserService {
 
   submitForm(){
     console.log(this.form.value);
-    this.dataService.postData('/signupfomr',this.form.value);
+    this.dataService.postData('/signup',this.form.value);
   }
 
   checkPasswords(form: FormGroup) {
